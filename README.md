@@ -3,6 +3,10 @@ Steps to deploy your [Parse-Server](https://parseplatform.org/) and DB using Her
 
 ## Steps
 
+### 0. Clone this Repo
+
+![Clone](https://i.imgur.com/7GFNXU3.png)
+
 ### 1. Install/Update Packages
 
 `npm install`
