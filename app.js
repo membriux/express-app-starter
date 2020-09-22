@@ -4,9 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
+// ––––– Routers Node.js Logic Files ––––– 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
 
 var app = express();
 
@@ -21,9 +21,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
+// ––––– Routes that are shown on domain (i.e. website.com/indexName) –––––
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -40,5 +40,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// Host web app on specific port
+const port = process.env.port || 3000;
+app.listen(port, function() {
+  console.log('Your web app is running... on localhost:' + port)
+})
+
 
 module.exports = app;
